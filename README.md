@@ -97,7 +97,6 @@ pry(main)> team.player_count
 
 Use TDD to update your `Team` class so that it responds to the following interaction pattern: 
 
-* A team is active if it has at least one player.
 * Player is considered a long term player if their contract length is greater than two years.
 * Player is considered a short term player if their contract length is two years or less.
 * Payroll is the total cost of all of the players.
@@ -111,9 +110,6 @@ pry(main)> require './lib/team'
 
 pry(main)> team = Team.new("Dodgers", "Los Angeles")
 #=> #<Team:0x00007fccd30375f8...>
-
-pry(main)> team.active?
-#=> false
 
 pry(main)> player_1 = Player.new("Michael Palledorous" , 1000000, 36)
 #=> #<Player:0x00007fa53b9ca0a8...>
@@ -134,9 +130,6 @@ pry(main)> team.add_player(player_2)
 pry(main)> team.add_player(player_3)
 
 pry(main)> team.add_player(player_4)
-
-pry(main)> team.active?
-#=> true
 
 pry(main)> team.long_term_players
 #=> [#<Player:0x00007fa53b9ca0a8...>, #<Player:0x00007fccd383c2d0...>]
