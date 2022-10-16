@@ -1,9 +1,10 @@
 require 'rspec'
+require './lib/player'
 
 RSpec.describe Player do
   it 'exists' do
     player = Player.new("Michael Palledorous" , 1000000, 36)
-    
+
     expect(player).to be_a Player
   end
 
@@ -34,6 +35,6 @@ RSpec.describe Player do
   it 'has a total cost' do
     player = Player.new("Michael Palledorous" , 1000000, 36)
 
-    expect(player.total_costg).to eq(36000000)
+    expect(player.total_cost).to eq(36000000)
   end
 end
