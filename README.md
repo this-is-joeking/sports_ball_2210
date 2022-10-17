@@ -99,7 +99,7 @@ Use TDD to update your `Team` class so that it responds to the following interac
 
 * Player is considered a long term player if their contract length is greater than two years.
 * Player is considered a short term player if their contract length is two years or less.
-* Payroll is the total cost of all of the players.
+* total_value is the total cost of all of the players.
 
 ```ruby
 pry(main)> require './lib/player'
