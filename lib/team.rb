@@ -16,21 +16,17 @@ class Team
   end
 
   def long_term_players
-    # should come back and consider other enumerables if time permits
-    long_term_roster = []
-    @roster.each do |player|
-      long_term_roster << player if player.contract_length > 24
+    long_term_roster = @roster.map do |player|
+      player if player.contract_length > 24
     end
-    long_term_roster
+    long_term_roster.compact
   end
 
   def short_term_players
-    # should come back and consider other enumerables if time permits
-    short_term_roster = []
-    @roster.each do |player|
-      short_term_roster << player if player.contract_length <= 24
+    short_term_roster = @roster.map do |player|
+      player if player.contract_length <= 24
     end
-    short_term_roster
+    short_term_roster.compact
   end
 
   def total_value
@@ -51,5 +47,13 @@ class Team
   def average_cost_of_player
     avg = total_value / player_count
     "$#{avg}"
+    # need to add way to format number with commas
+  end
+
+  def players_by_last_name
+    last_names = roster.map do |player|
+      player.last_name
+    end
+    last_names.sort.join(", ")
   end
 end
