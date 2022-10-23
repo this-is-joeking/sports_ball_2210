@@ -47,4 +47,9 @@ class Team
     detail["player_count"] = player_count
     detail
   end
+
+  def average_cost_of_player
+    avg = total_value / player_count
+    "$#{avg}"
+  end
 end
